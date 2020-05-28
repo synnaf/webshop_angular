@@ -3,10 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { CheckOutFormComponent } from './components/check-out-form/check-out-form.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShoppingcartComponent,
+    MenuComponent,
+    CheckOutFormComponent
   ],
   imports: [
     BrowserModule,
