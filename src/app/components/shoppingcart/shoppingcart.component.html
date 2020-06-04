@@ -1,32 +1,31 @@
 <!-- shoppingcart visas dels som en egen komponent, och dels hämtas in i checkout? -->
-<section>
-  <div class="shoppingcart">
-    <div class="cart-item">
-      <div class="placeholder-cart">
-        <img src="">
-      </div>
-      <div class="item-info">
-        <h4>
-          First item
-        </h4>
-        <span>
-          First item info
-        </span>
-      </div>
-    </div>
-    <div class="cart-item">
-      <div class="placeholder-cart">
-        <img src="">
-      </div>
-      <div class="item-info">
-        <h4>
-          Second item
-        </h4>
-        <span>
-          Second item info
-        </span>
+<!-- <main> -->
+  <section *ngIf="cartItems">
+    <div *ngFor="let movie of cartItems" class="shoppingcart">
+      <div class="cart-item">
+        <div class="placeholder">
+          <img src="{{ movie.productImage }}">
+        </div>
+        <div class="item-info">
+          <h4>
+            {{ movie.productName }}
+          </h4>
+          <span>
+            {{ movie.productPrice }} kr
+          </span>
+        </div>
+        <div class="edit-item">
+          <button>+</button>
+          <button>-</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+  <section *ngIf="cartItems.length === 0">
+    <div class="shoppingcart">
+      <div class="placeholder">
+        <h4>Cart is empty!</h4>
+      </div>
+    </div>
+  </section>
+<!-- </main> -->
