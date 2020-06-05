@@ -39,16 +39,6 @@ export class ProductsComponent implements OnInit {
     window.alert('Added to cart!');
   }
 
-// jag vill kunna se detaljer, detta bör skickas till min child productDetails
-  toggleDetails(p: Product) {
-
-    // skickar rätt produkt
-    console.log(p);
-    // // här ska routingen ske till product-details
-    // this.service.getOneMovie(p);
-
-  }
-
 }
 
 

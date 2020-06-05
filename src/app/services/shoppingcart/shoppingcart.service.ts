@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
+import IShoppingcartService from './IShoppingcartService';
+import { Product } from 'src/app/models/Product';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ShoppingcartService {
+
+export class ShoppingcartService implements IShoppingcartService {
   // en tom array som är current items in cart
-  cartList = [];
+  cartList: Product[] = [];
 
   // en metod som lägger till en produkt i listan
   addToCart(product) {
     this.cartList.push(product);
 
-    // skriv mer logik härinne så att den inte lägger till dubletter,
-    // gör det genom testningen
   }
 
   // en metod som returnerar listam
@@ -26,16 +27,7 @@ export class ShoppingcartService {
     return this.cartList;
   }
 
-
-  // private movieSource = new Subject<Product>();
-
   constructor() { }
-
-    // movieToAdd = this.movieSource.asObservable();
-    // addInCart(movieToPublish: Product) {
-    //   this.movieSource.next(movieToPublish);
-    //   // här är onjektet som ska skickas vidare
-    // }
 
 
 }

@@ -1,7 +1,21 @@
-<p>product-details works!
-Parametern från url: {{ id }}
-</p>
-<p> {{ selectedMovie.productName }} movies are </p>
 
+<main>
+  <section>
+    <h2> {{ selectedMovie.productName }} </h2>
+    <div class="product-card">
+      <div class="placeholder">
+        <img src="{{ selectedMovie.productImage }}">
+      </div>
+      <div class="extended-info">
+        <span> {{ selectedMovie.description }} </span>
+        <p class="other-info"> {{ selectedMovie.productPrice }} kr</p>
+        <p class="other-info"> Released in: {{ selectedMovie.releaseYear }}.</p>
+      </div>
+      <div class="product-buttons">
+        <button type="button">BUY</button>
+        <button> <a routerLink="/products">&larr;Back</a></button>
+      </div>
+    </div>
+  </section>
 
-<a routerLink="/">Back</a>
+</main>

@@ -22,6 +22,8 @@ export class MovieDataService implements IMovieDataService {
         ourOwnMovieObject.productId = movie.id;
         ourOwnMovieObject.productPrice = movie.price;
         ourOwnMovieObject.productImage = movie.imageUrl;
+        ourOwnMovieObject.description = movie.description;
+        ourOwnMovieObject.releaseYear = movie.year;
         ourOwnMovieObject.productCategory = movie.productCategory;
         return ourOwnMovieObject;
       });

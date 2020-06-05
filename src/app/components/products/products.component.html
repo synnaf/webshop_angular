@@ -9,8 +9,8 @@
       </div>
       <div class="product-buttons">
         <button type="button" (click)="addToCart(p)" >BUY</button>
-        <button type="button" (click)="toggleDetails(p)">DETAILS
-          <!-- <app-product-details [id]="showDetails()"></app-product-details> -->
+        <button type="button">
+          <a routerLink="{{ p.productId }}">DETAILS</a>
         </button>
       </div>
     </div>

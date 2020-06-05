@@ -6,15 +6,12 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 
-// länka in alla komponenter du vill ha tillgång till
-
-
 const routes: Routes = [
   { path: '', component: StartPageComponent },
   { path: 'products', component: ProductsComponent},
   { path: 'products/:id', component: ProductDetailsComponent},
   { path: 'shoppingcart', component: ShoppingcartComponent }
-  // { path: '**', component: NotfoundComponent }
+
 ];
 
 @NgModule({

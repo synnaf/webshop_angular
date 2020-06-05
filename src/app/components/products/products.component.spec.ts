@@ -8,6 +8,7 @@ describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
 
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProductsComponent ],
@@ -27,14 +28,27 @@ describe('ProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
+  // testar vår service om den returnerar 3 till vår component
+  let movieService: MockMovieDataService;
 
   // här kommer mina tester för MockMovieSerivce
-  it('should get movies', () => {
+  it('should contain productList which length is 3', () => {
+    expect(component.productList.length).toBe(0);
+    movieService = new MockMovieDataService();
+    movieService.getMovies();
     expect(component.productList.length).toBe(3);
-    expect(component.productList[0].productName).toBe('Star Wars 1');
 
   });
+
+
+
+  it('#addToCart(product) should add item to cart', () => {
+    expect(component.productList.length).toBe(3);
+    component.addToCart(this.product);
+    expect(component.addToCart(this.product)).toHaveBeenCalled;
+
+  });
+
 
 
 
