@@ -14,14 +14,4 @@ describe('MovieDataService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should fetch data from given url', () => {
-    // logiken som hämtar datan
-    // måste jag skriva tester för servicen...?
-
-
-
-
-  });
-
-
 });

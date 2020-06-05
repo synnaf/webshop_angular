@@ -8,4 +8,8 @@ export class AppPage {
   getTitleText(): Promise<string> {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
+  getProductCards() {
+    return element(by.tagName('app-start-page'));
+  }
 }

@@ -9,12 +9,9 @@
       </div>
       <div class="product-buttons">
         <button type="button" (click)="addToCart(p)" >BUY</button>
-        <button type="button" (click)="toggleDetails()">DETAILS
-          <!-- <a routerLink=":id" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">DETAILS</a> -->
+        <button type="button" (click)="toggleDetails(p)">DETAILS
+          <!-- <app-product-details [id]="showDetails()"></app-product-details> -->
         </button>
-        <!-- <div [hidden]="!visible">
-          <app-product-details (open)="hej($event)"></app-product-details>
-        </div> -->
       </div>
     </div>
   </section>

@@ -10,6 +10,9 @@ export class ShoppingcartService {
   // en metod som lägger till en produkt i listan
   addToCart(product) {
     this.cartList.push(product);
+
+    // skriv mer logik härinne så att den inte lägger till dubletter,
+    // gör det genom testningen
   }
 
   // en metod som returnerar listam

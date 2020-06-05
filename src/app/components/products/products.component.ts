@@ -4,7 +4,6 @@ import { MovieDataService } from 'src/app/services/movieData/movie-data.service'
 import { ShoppingcartService } from 'src/app/services/shoppingcart/shoppingcart.service';
 
 
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -15,18 +14,22 @@ export class ProductsComponent implements OnInit {
   // @Input() open: Product;
   // @Output() close: EventEmitter<any> = new EventEmitter();
 
-
-  productList: Product[] = [];
-
   constructor(
     private service: MovieDataService,
     private cartService: ShoppingcartService
   ) { }
 
+  productList: Product[] = [];
+
   ngOnInit(): void {
-    this.service.movies.subscribe((movie: Product[]) => {
+    // detta är det som ska hända innan funktionen hämtar datan på rad 34
+    // prenumerera på subjektet movies,
+    this.service.productList.subscribe((movie: Product[]) => {
+      // när anropet gjorts, uppdatera listan
       this.productList = movie;
     });
+    // kör funktionen som hämtar datan och uppdaterar productList
+    // denna händelse skulle man kunna koppla till en click-event
     this.service.getMovies();
   }
 
@@ -37,15 +40,13 @@ export class ProductsComponent implements OnInit {
   }
 
 // jag vill kunna se detaljer, detta bör skickas till min child productDetails
-  toggleDetails() {
+  toggleDetails(p: Product) {
 
-    console.log("toggle details");
-  //   this.visible = !this.visible;
-  //   if (this.visible) {
-  //     this.open.productPrice;
-  //   } else {
-  //     this.close.emit(e);
-  //   }
+    // skickar rätt produkt
+    console.log(p);
+    // // här ska routingen ske till product-details
+    // this.service.getOneMovie(p);
+
   }
 
 }
